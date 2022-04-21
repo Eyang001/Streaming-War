@@ -1,0 +1,48 @@
+.all {
+  background-color: #282828;
+  color: white;
+}
+
+.row {
+  display: flex;
+  text-align: center;
+  border-spacing: 2px;
+  padding: 2px;
+}
+
+.controller {
+  flex: 30%;
+  text-align: center;
+  border-style: groove;
+  border-color: grey;
+  border-spacing: 1cm 2em;
+  padding: 2px;
+}
+.view {
+  flex: 70%;
+  text-align: center;
+  border-style: groove;
+  border-color: grey;
+  border-spacing: 1cm 2em;
+}
+
+.actions {
+  color: 808080;
+}
+
+.table {
+  border: 1px solid gray;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: white;
+}
+
+.table th {
+  background-color: dimgray;
+}
+
+h1 {
+  color: 808080;
+  text-align: center;
+}

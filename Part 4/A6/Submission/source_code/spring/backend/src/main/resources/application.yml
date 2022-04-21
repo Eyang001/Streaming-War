@@ -1,0 +1,6 @@
+#spring:
+#  application:
+#    name: backend
+#
+#server:
+#  port: ${random.int(5000,5100)}

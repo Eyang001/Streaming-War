@@ -1,0 +1,622 @@
+curl -i -X POST localhost:8080/crud/studio -H 'Content-type:application/json' -d ' {"shortName": "warner", "longName": "Warner Brothers"} '
+curl -i -X GET "localhost:8080/crud/studio/single?shortName=warner"
+curl -i -X POST localhost:8080/crud/studio -H 'Content-type:application/json' -d ' {"shortName": "columbia", "longName": "Columbia Pictures"} '
+curl -i -X GET "localhost:8080/crud/studio/single?shortName=columbia"
+curl -i -X POST localhost:8080/crud/studio -H 'Content-type:application/json' -d ' {"shortName": "20cent", "longName": "20th Century Fox"} '
+curl -i -X GET "localhost:8080/crud/studio/single?shortName=20cent"
+
+curl -i -X POST localhost:8080/crud/event -H 'Content-type:application/json' -d ' {
+	"type": "movie", 
+	"name": "Batman Begins", 
+	"yearProduced": "2005", 
+	"duration": 140, 
+	"studioShortName": "warner", 
+	"licensingFee": 1000,
+	"messageType": "movie"
+} '
+curl -i -X POST localhost:8080/crud/event -H 'Content-type:application/json' -d ' {
+	"type": "movie", 
+	"name": "Batman v Superman", 
+	"yearProduced": "2016", 
+	"duration": 152, 
+	"studioShortName": "warner", 
+	"licensingFee": 1000,
+	"messageType": "movie"
+} '
+curl -i -X POST localhost:8080/crud/event -H 'Content-type:application/json' -d ' {
+	"type": "movie", 
+	"name": "Tenet", 
+	"yearProduced": "2020", 
+	"duration": 150, 
+	"studioShortName": "warner", 
+	"licensingFee": 4000,
+	"messageType": "movie"
+} '
+curl -i -X POST localhost:8080/crud/event -H 'Content-type:application/json' -d ' {
+	"type": "movie", 
+	"name": "Wonder Woman", 
+	"yearProduced": "2017", 
+	"duration": 114, 
+	"studioShortName": "warner", 
+	"licensingFee": 2000,
+	"messageType": "movie"
+} '
+curl -i -X POST localhost:8080/crud/event -H 'Content-type:application/json' -d ' {
+	"type": "movie", 
+	"name": "Bad Boys for Life", 
+	"yearProduced": "2020", 
+	"duration": 124, 
+	"studioShortName": "columbia", 
+	"licensingFee": 1000,
+	"messageType": "movie"
+} '
+curl -i -X POST localhost:8080/crud/event -H 'Content-type:application/json' -d ' {
+	"type": "movie", 
+	"name": "Hollow Man", 
+	"yearProduced": "2000", 
+	"duration": 112, 
+	"studioShortName": "columbia", 
+	"licensingFee": 1000,
+	"messageType": "movie"
+} '
+curl -i -X POST localhost:8080/crud/event -H 'Content-type:application/json' -d ' {
+	"type": "movie", 
+	"name": "The Grudge", 
+	"yearProduced": "2004", 
+	"duration": 91, 
+	"studioShortName": "columbia", 
+	"licensingFee": 1000,
+	"messageType": "movie"
+} '
+curl -i -X POST localhost:8080/crud/event -H 'Content-type:application/json' -d ' {
+	"type": "movie", 
+	"name": "Spy", 
+	"yearProduced": "2015", 
+	"duration": 120, 
+	"studioShortName": "20cent", 
+	"licensingFee": 2000,
+	"messageType": "movie"
+} '
+curl -i -X POST localhost:8080/crud/event -H 'Content-type:application/json' -d ' {
+	"type": "movie", 
+	"name": "The New Mutants", 
+	"yearProduced": "2020", 
+	"duration": 94, 
+	"studioShortName": "20cent", 
+	"licensingFee": 3000,
+	"messageType": "movie"
+} '
+curl -i -X POST localhost:8080/crud/event -H 'Content-type:application/json' -d ' {
+	"type": "ppv", 
+	"name": "Justice League Live", 
+	"yearProduced": "2020", 
+	"duration": 180, 
+	"studioShortName": "warner", 
+	"licensingFee": 12000,
+	"messageType": "ppv"
+} '
+curl -i -X POST localhost:8080/crud/event -H 'Content-type:application/json' -d ' {
+	"type": "ppv", 
+	"name": "Hamilton Live", 
+	"yearProduced": "2020", 
+	"duration": 150, 
+	"studioShortName": "20cent", 
+	"licensingFee": 8000,
+	"messageType": "ppv"
+} '
+curl -i -X GET "localhost:8080/crud/event"
+
+
+curl -i -X POST localhost:8080/crud/streamingservice -H 'Content-type:application/json' -d ' {
+	"shortName": "net", 
+	"longName": "Netflix", 
+	"subscriptionPrice": 12
+} '
+curl -i -X GET "localhost:8080/crud/streamingservice/single?shortName=net"
+
+curl -i -X POST localhost:8080/crud/streamingservice -H 'Content-type:application/json' -d ' {
+	"shortName": "apv", 
+	"longName": "Amazon Prime Video", 
+	"subscriptionPrice": 15
+} '
+curl -i -X GET "localhost:8080/crud/streamingservice/single?shortName=apv"
+
+curl -i -X POST localhost:8080/crud/streamingservice -H 'Content-type:application/json' -d ' {
+	"shortName": "hulu", 
+	"longName": "Hulu Plus", 
+	"subscriptionPrice": 11
+} '
+curl -i -X GET "localhost:8080/crud/streamingservice/single?shortName=hulu"
+
+
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "net", 
+	"eventName": "Hollow Man", 
+	"yearProduced": "2000"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "net", 
+	"eventName": "Spy", 
+	"yearProduced": "2015"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "net", 
+	"eventName": "Tenet", 
+	"yearProduced": "2020"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "net", 
+	"eventName": "The Grudge", 
+	"yearProduced": "2004"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "apv", 
+	"eventName": "Bad Boys for Life", 
+	"yearProduced": "2020"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "apv", 
+	"eventName": "Hollow Man", 
+	"yearProduced": "2000"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "apv", 
+	"eventName": "The Grudge", 
+	"yearProduced": "2004"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "apv", 
+	"eventName": "Spy", 
+	"yearProduced": "2015"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "apv", 
+	"eventName": "The New Mutants", 
+	"yearProduced": "2020"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "hulu", 
+	"eventName": "Batman Begins", 
+	"yearProduced": "2005"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "hulu", 
+	"eventName": "Batman v Superman", 
+	"yearProduced": "2016"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "hulu", 
+	"eventName": "The New Mutants", 
+	"yearProduced": "2020"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "hulu", 
+	"eventName": "Wonder Woman", 
+	"yearProduced": "2017"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "hulu", 
+	"eventName": "Hamilton Live", 
+	"yearProduced": "2020",
+	"price": 100
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "hulu", 
+	"eventName": "Justice League Live", 
+	"yearProduced": "2020",
+	"price": 80
+} '
+
+curl -i -X GET "localhost:8080/service/offer"
+
+
+curl -i -X POST localhost:8080/crud/demographicgroup -H 'Content-type:application/json' -d ' {
+	"shortName": "age_40_50", 
+	"longName": "Viewers between 40 and 50", 
+	"number_of_accounts": 800
+} '
+
+curl -i -X GET "localhost:8080/crud/demographicgroup?single=age_40_50"
+
+
+curl -i -X POST localhost:8080/crud/demographicgroup -H 'Content-type:application/json' -d ' {
+	"shortName": "age_20_heroes", 
+	"longName": "Viewers of Marvel/DC under 20", 
+	"number_of_accounts": 10000
+} '
+
+curl -i -X GET "localhost:8080/crud/demographicgroup?single=age_20_heroes"
+
+
+curl -i -X POST localhost:8080/crud/demographicgroup -H 'Content-type:application/json' -d ' {
+	"shortName": "sci_fi", 
+	"longName": "Viewers of Science Fiction", 
+	"number_of_accounts": 2000
+} '
+
+curl -i -X GET "localhost:8080/crud/demographicgroup?single=sci_fi"
+
+curl -i -X GET "localhost:8080/service/nextmonth/display"
+
+curl -i -X POST localhost:8080/service/watch -H 'Content-type:application/json' -d ' {
+	"demographicGroupShortName": "age_40_50",
+	"percentage": 40,
+	"streamingServiceShortName": "net",
+	"eventName": "Spy",
+	"yearProduced": "2015"
+} '
+
+curl -i -X POST localhost:8080/service/watch -H 'Content-type:application/json' -d ' {
+	"demographicGroupShortName": "age_40_50",
+	"percentage": 70,
+	"streamingServiceShortName": "net",
+	"eventName": "Tenet",
+	"yearProduced": "2020"
+} '
+
+curl -i -X POST localhost:8080/service/watch -H 'Content-type:application/json' -d ' {
+	"demographicGroupShortName": "age_20_heroes",
+	"percentage": 30,
+	"streamingServiceShortName": "hulu",
+	"eventName": "Batman Begins",
+	"yearProduced": "2005"
+} '
+
+curl -i -X POST localhost:8080/service/watch -H 'Content-type:application/json' -d ' {
+	"demographicGroupShortName": "age_20_heroes",
+	"percentage": 60,
+	"streamingServiceShortName": "hulu",
+	"eventName": "Batman v Superman",
+	"yearProduced": "2016"
+} '
+
+curl -i -X POST localhost:8080/service/watch -H 'Content-type:application/json' -d ' {
+	"demographicGroupShortName": "age_20_heroes",
+	"percentage": 50,
+	"streamingServiceShortName": "apv",
+	"eventName": "The New Mutants",
+	"yearProduced": "2020"
+} '
+
+curl -i -X POST localhost:8080/service/watch -H 'Content-type:application/json' -d ' {
+	"demographicGroupShortName": "sci_fi",
+	"percentage": 30,
+	"streamingServiceShortName": "net",
+	"eventName": "Hollow Man",
+	"yearProduced": "2000"
+} '
+
+curl -i -X POST localhost:8080/service/watch -H 'Content-type:application/json' -d ' {
+	"demographicGroupShortName": "sci_fi",
+	"percentage": 30,
+	"streamingServiceShortName": "apv",
+	"eventName": "The Grudge",
+	"yearProduced": "2004"
+} '
+
+curl -i -X GET "localhost:8080/crud/studio/single?shortName=warner"
+curl -i -X GET "localhost:8080/crud/studio/single?shortName=columbia"
+curl -i -X GET "localhost:8080/crud/studio/single?shortName=20cent"
+curl -i -X GET "localhost:8080/crud/streamingservice/single?shortName=net"
+curl -i -X GET "localhost:8080/crud/streamingservice/single?shortName=apv"
+curl -i -X GET "localhost:8080/crud/streamingservice/single?shortName=hulu"
+curl -i -X GET "localhost:8080/crud/demographicgroup/single?shortName=age_40_50"
+curl -i -X GET "localhost:8080/crud/demographicgroup/single?shortName=age_20_heroes"
+curl -i -X GET "localhost:8080/crud/demographicgroup/single?shortName=sci_fi"
+
+curl -i -X GET "localhost:8080/service/nextmonth/next"
+curl -i -X GET "localhost:8080/service/nextmonth/display"
+
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "net", 
+	"eventName": "Hollow Man", 
+	"yearProduced": "2000"
+} '
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "net", 
+	"eventName": "Spy", 
+	"yearProduced": "2015"
+} '
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "net", 
+	"eventName": "Tenet", 
+	"yearProduced": "2020"
+} '
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "net", 
+	"eventName": "The Grudge", 
+	"yearProduced": "2004"
+} '
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "apv", 
+	"eventName": "Bad Boys for Life", 
+	"yearProduced": "2020"
+} '
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "apv", 
+	"eventName": "Hollow Man", 
+	"yearProduced": "2000"
+} '
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "apv", 
+	"eventName": "The Grudge", 
+	"yearProduced": "2004"
+} '
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "apv", 
+	"eventName": "Spy", 
+	"yearProduced": "2015"
+} '
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "apv", 
+	"eventName": "The New Mutants", 
+	"yearProduced": "2020"
+} '
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "hulu", 
+	"eventName": "Batman Begins", 
+	"yearProduced": "2005"
+} '
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "hulu", 
+	"eventName": "Batman v Superman", 
+	"yearProduced": "2016"
+} '
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "hulu", 
+	"eventName": "The New Mutants", 
+	"yearProduced": "2020"
+} '
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "hulu", 
+	"eventName": "Wonder Woman", 
+	"yearProduced": "2017"
+} '
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "hulu", 
+	"eventName": "Hamilton Live", 
+	"yearProduced": "2020",
+	"price": 100
+} '
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "hulu", 
+	"eventName": "Justice League Live", 
+	"yearProduced": "2020",
+	"price": 80
+} '
+
+curl -i -X GET "localhost:8080/service/offer"
+
+curl -i -X POST localhost:8080/service/watch -H 'Content-type:application/json' -d ' {
+	"demographicGroupShortName": "age_40_50",
+	"percentage": 70,
+	"streamingServiceShortName": "net",
+	"eventName": "Tenet",
+	"yearProduced": "2020"
+} '
+
+curl -i -X POST localhost:8080/service/watch -H 'Content-type:application/json' -d ' {
+	"demographicGroupShortName": "age_20_heroes",
+	"percentage": 60,
+	"streamingServiceShortName": "hulu",
+	"eventName": "Batman v Superman",
+	"yearProduced": "2016"
+} '
+
+curl -i -X POST localhost:8080/service/watch -H 'Content-type:application/json' -d ' {
+	"demographicGroupShortName": "age_20_heroes",
+	"percentage": 50,
+	"streamingServiceShortName": "apv",
+	"eventName": "The New Mutants",
+	"yearProduced": "2020"
+} '
+
+curl -i -X POST localhost:8080/service/watch -H 'Content-type:application/json' -d ' {
+	"demographicGroupShortName": "age_20_heroes",
+	"percentage": 40,
+	"streamingServiceShortName": "hulu",
+	"eventName": "Wonder Woman",
+	"yearProduced": "2017"
+} '
+
+curl -i -X POST localhost:8080/service/watch -H 'Content-type:application/json' -d ' {
+	"demographicGroupShortName": "age_20_heroes",
+	"percentage": 40,
+	"streamingServiceShortName": "hulu",
+	"eventName": "Justice League Live",
+	"yearProduced": "2020"
+} '
+
+curl -i -X POST localhost:8080/service/watch -H 'Content-type:application/json' -d ' {
+	"demographicGroupShortName": "sci_fi",
+	"percentage": 30,
+	"streamingServiceShortName": "apv",
+	"eventName": "The Grudge",
+	"yearProduced": "2004"
+} '
+
+curl -i -X POST localhost:8080/service/watch -H 'Content-type:application/json' -d ' {
+	"demographicGroupShortName": "sci_fi",
+	"percentage": 30,
+	"streamingServiceShortName": "hulu",
+	"eventName": "The New Mutants",
+	"yearProduced": "2020"
+} '
+
+curl -i -X GET "localhost:8080/crud/studio/single?shortName=warner"
+curl -i -X GET "localhost:8080/crud/studio/single?shortName=columbia"
+curl -i -X GET "localhost:8080/crud/studio/single?shortName=20cent"
+curl -i -X GET "localhost:8080/crud/streamingservice/single?shortName=net"
+curl -i -X GET "localhost:8080/crud/streamingservice/single?shortName=apv"
+curl -i -X GET "localhost:8080/crud/streamingservice/single?shortName=hulu"
+curl -i -X GET "localhost:8080/crud/demographicgroup/single?shortName=age_40_50"
+curl -i -X GET "localhost:8080/crud/demographicgroup/single?shortName=age_20_heroes"
+curl -i -X GET "localhost:8080/crud/demographicgroup/single?shortName=sci_fi"
+
+
+curl -i -X GET "localhost:8080/service/nextmonth/next"
+curl -i -X GET "localhost:8080/service/nextmonth/display"
+
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "net", 
+	"eventName": "Hollow Man", 
+	"yearProduced": "2000"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "net", 
+	"eventName": "Spy", 
+	"yearProduced": "2015"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "net", 
+	"eventName": "Tenet", 
+	"yearProduced": "2020"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "net", 
+	"eventName": "The Grudge", 
+	"yearProduced": "2004"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "apv", 
+	"eventName": "Bad Boys for Life", 
+	"yearProduced": "2020"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "apv", 
+	"eventName": "Hollow Man", 
+	"yearProduced": "2000"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "apv", 
+	"eventName": "The Grudge", 
+	"yearProduced": "2004"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "apv", 
+	"eventName": "Spy", 
+	"yearProduced": "2015"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "apv", 
+	"eventName": "The New Mutants", 
+	"yearProduced": "2020"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "hulu", 
+	"eventName": "Batman Begins", 
+	"yearProduced": "2005"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "hulu", 
+	"eventName": "Batman v Superman", 
+	"yearProduced": "2016"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "hulu", 
+	"eventName": "The New Mutants", 
+	"yearProduced": "2020"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "hulu", 
+	"eventName": "Wonder Woman", 
+	"yearProduced": "2017"
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "hulu", 
+	"eventName": "Hamilton Live", 
+	"yearProduced": "2020",
+	"price": 100
+} '
+
+curl -i -X POST localhost:8080/service/offer -H 'Content-type:application/json' -d ' {
+	"streamingServiceName": "hulu", 
+	"eventName": "Justice League Live", 
+	"yearProduced": "2020",
+	"price": 80
+} '
+
+curl -i -X GET "localhost:8080/service/offer"
+
+curl -i -X POST localhost:8080/service/watch -H 'Content-type:application/json' -d ' {
+	"demographicGroupShortName": "age_40_50",
+	"percentage": 50,
+	"streamingServiceShortName": "hulu",
+	"eventName": "Hamilton Live",
+	"yearProduced": "2020"
+} '
+
+curl -i -X POST localhost:8080/service/watch -H 'Content-type:application/json' -d ' {
+	"demographicGroupShortName": "age_20_heroes",
+	"percentage": 40,
+	"streamingServiceShortName": "hulu",
+	"eventName": "Wonder Woman",
+	"yearProduced": "2017"
+} '
+
+
+curl -i -X POST localhost:8080/service/watch -H 'Content-type:application/json' -d ' {
+	"demographicGroupShortName": "age_20_heroes",
+	"percentage": 40,
+	"streamingServiceShortName": "hulu",
+	"eventName": "Justice League Live",
+	"yearProduced": "2020"
+} '
+
+curl -i -X POST localhost:8080/service/watch -H 'Content-type:application/json' -d ' {
+	"demographicGroupShortName": "sci_fi",
+	"percentage": 30,
+	"streamingServiceShortName": "hulu",
+	"eventName": "The New Mutants",
+	"yearProduced": "2020"
+} '
+
+curl -i -X POST localhost:8080/service/watch -H 'Content-type:application/json' -d ' {
+	"demographicGroupShortName": "sci_fi",
+	"percentage": 30,
+	"streamingServiceShortName": "net",
+	"eventName": "Tenet",
+	"yearProduced": "2020"
+} '
+
+curl -i -X GET "localhost:8080/crud/studio/single?shortName=warner"
+curl -i -X GET "localhost:8080/crud/studio/single?shortName=columbia"
+curl -i -X GET "localhost:8080/crud/studio/single?shortName=20cent"
+curl -i -X GET "localhost:8080/crud/streamingservice/single?shortName=net"
+curl -i -X GET "localhost:8080/crud/streamingservice/single?shortName=apv"
+curl -i -X GET "localhost:8080/crud/streamingservice/single?shortName=hulu"
+curl -i -X GET "localhost:8080/crud/demographicgroup/single?shortName=age_40_50"
+curl -i -X GET "localhost:8080/crud/demographicgroup/single?shortName=age_20_heroes"
+curl -i -X GET "localhost:8080/crud/demographicgroup/single?shortName=sci_fi"
+curl -i -X GET "localhost:8080/service/nextmonth/next"
+curl -i -X GET "localhost:8080/service/nextmonth/display"

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" class = 'all'>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Streaming Wars</title>
+    <link rel="stylesheet" href="App.css">
+  </head>
+  <body>
+    <h1>Streaming Wars</h1>
+    <div class = 'row'>
+<!--      <div class = 'controller'>-->
+<!--        <h2>System Configuration</h2>-->
+<!--        <p>Starting Month</p>-->
+<!--        <input type = 'text' id = 'month'/>-->
+<!--        <p>Starting Year</p>-->
+<!--        <input type = 'text' id = 'year'/>-->
+<!--        <p class = 'actions'>Action</p>-->
+<!--        <button id='curr_month'>Set Current Month</button>-->
+<!--        <button id='next_month'>Next Month</button>-->
+<!--      </div>-->
+      <div class = 'controller'>
+        <h2>Offer</h2>
+        <p>Streaming Service</p>
+        <input type = 'text' id = 'stream_offer'/>
+        <p>Event Name</p>
+        <input type = 'text' id = 'event_name_offer'/>
+        <p>Year Produced</p>
+        <input type = 'text' id = 'year_produced_offer'/>
+        <p>Viewing Price</p>
+        <input type = 'text' id = 'view_price'/>
+        <p class = 'actions'>Action</p>
+        <button id='offer_movie'>Offer Movie</button>
+        <button id='offer_ppv'>Offer PPV</button>
+      </div>
+      <div class = 'controller'>
+        <h2>Watch</h2>
+        <p>Demographic Group</p>
+        <input type = 'text' id = 'demo_group_watch'/>
+        <p>Percentage</p>
+        <input type = 'text' id = 'percentage'/>
+        <p>Streaming Service</p>
+        <input type = 'text' id = 'stream_watch'/>
+        <p>Event name</p>
+        <input type = 'text' id = 'event_name_watch'/>
+        <p>Year Produced</p>
+        <input type = 'text' id = 'year_produced_watch'/>
+        <p class = 'actions'>Action</p>
+        <button id='watch'>Watch</button>
+      </div>
+      
+    </div>
+    <div>
+      <div class = 'row'>
+      <div class = 'controller'>
+        <h2>Demographic Group</h2>
+        <form id='demo'>
+        <p>Short Name</p>
+        <input type="text" id="shortName_demo" />
+        <p>Long Name</p>
+        <input type="text" id="longName_demo" />
+        <p>Number of Accounts</p>
+        <input type="text" id="numberOfAccounts" />
+        </form>
+        <p class = 'actions'>Actions</p>
+        <button id="create_demo_btn">Create</button>
+        <button id="update_demo_btn">Update</button>
+        <button id="display_demo_btn">Display</button>
+      </div>
+
+      <div id="view_demo" class="view"> 
+        <h2>Display Demographic Group</h2>
+        <table class='table'>
+          <thead>
+          <tr id = 'header'>
+              <th>Short Name</th>
+              <th>Long Name</th>
+              <th>Size</th>
+              <th>Current Month Spending</th>
+              <th>Previous Month Spending</th>
+              <th>Toal Spending excl Current Month</th>
+          </tr>
+          </thead>
+          <tbody id = 'table_demo'>
+          </tbody>
+          </table>
+      </div>
+      </div>
+
+      
+
+      <div class = 'row'>
+      <div class = 'controller'>
+        <h2>Streaming Service</h2>
+        <form id='stream'>
+        <p>Short Name</p>
+        <input type="text" id="shortName_stream" />
+        <p>Long Name</p>
+        <input type="text" id="longName_stream" />
+        <p>Subscription Price</p>
+        <input type="text" id="subscription_price" />
+        </form>
+        <p class = 'actions'>Actions</p>
+        <button id="create_stream_btn">Create</button>
+        <button id="update_stream_btn">Update</button>
+        <button id="display_stream_btn">Display</button>
+      </div>
+      <div id="view_stream" class="view">
+        <h2>Display Streaming Service</h2>
+        <table class='table'>
+          <thead>
+          <tr id = 'header'>
+              <th>Short Name</th>
+              <th>Long Name</th>
+              <th>Subscription Fee</th>
+              <th>Current Month Revenue</th>
+              <th>Previous Month Revenue</th>
+              <th>Total Revenue excl Current Month</th>
+              <th>Total Licensing Fee</th>
+          </tr>
+        </thead>
+        <tbody id = 'table_stream'>
+        </tbody>
+          </table>
+      </div>
+      </div>
+
+      <div class = 'row'>
+      <div class = 'controller'>
+        <h2>Studio</h2>
+        <form id='studio'></form>
+        <p>Short Name</p>
+        <input type="text" id="shortName_studio" />
+        <p>Long Name</p>
+        <input type="text" id="longName_studio" />
+        </form>
+        <p class = 'actions'>Actions</p>
+        <button id="create_studio_btn">Create</button>
+        <button id="display_studio_btn">Display</button>
+      </div>
+      <div id="view_studio" class="view">
+        <h2>Display Studio</h2>
+        <table class='table' >
+          <thead>
+          <tr id = 'header'>
+              <th>Short Name </th>
+              <th>Long Name </th>
+              <th>Current Month Lincensing Fee </th>
+              <th>Previous Month Lincensing Fee </th>
+              <th>Total Lincensing Fee excl Current Month </th>
+          </tr>
+          </thead>
+          <tbody id = 'table_studio'>
+          </tbody>
+          </table>
+      </div>
+      </div>
+
+      <div class = 'row'>
+        <div class = 'controller'>
+          <h2>Event</h2>
+          <form id='event'></form>
+          <p>Type</p>
+          <input type="text" id="type_event" />
+          <p>Name</p>
+          <input type="text" id="name_event" />
+          <p>Year Produced</p>
+          <input type="text" id="year_produced" />
+          <p>Duration</p>
+          <input type="text" id="duration" />
+          <p>Produced By</p>
+          <input type="text" id="produced_by" />
+          <p>Licensing Fee</p>
+          <input type="text" id="licensing_fee" />
+          </form>
+          <p class = 'actions'>Actions</p>
+          <button id="create_event_btn">Create</button>
+          <button id="update_event_btn">Update</button>
+          <button id="display_event_btn">Display</button>
+        </div>
+          <div id="view_event" class="view">
+            <h2>Display Events</h2>
+            <table class='table'>
+              <thead>
+              <tr id = 'header'>
+                  <th>Type</th>
+                  <th>Name</th>
+                  <th>Year Produced</th>
+                  <th>Duration</th>
+                  <th>Studio</th>
+                  <th>License Fee</th>
+              </tr>
+              </thead>
+              <tbody id = 'table_event'>
+              </tbody>
+              </table>
+          </div>
+        </div>
+      <script src="Demo.js"></script>
+      <script src="Event.js"></script>
+      <script src="Stream.js"></script>
+      <script src="Studio.js"></script>
+      <script src="Time.js"></script>
+      <script src="Offer.js"></script>
+      <script src="Watch.js"></script>
+    </div>
+  </body>
+</html>

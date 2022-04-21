@@ -1,0 +1,18 @@
+#Steps to set up your server and get React App up and running
+
+1. Download npm and install it - use 'npm -v' to see if you have it installed.
+
+2. Open the frontend folder locally
+
+3.  Run below command separately to start React App
+
+npx create-react-app .
+
+npm start
+
+4. Replace src folder with our src folder
+
+
+******
+This video might be helpful to get you started.
+https://www.youtube.com/watch?v=hQAHSlTtcmY&t=948s

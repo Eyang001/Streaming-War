@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/2021-01-A6.iml" filepath="$PROJECT_DIR$/.idea/2021-01-A6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/streamingwars.iml" filepath="$PROJECT_DIR$/backend/streamingwars.iml" />
+    </modules>
+  </component>
+</project>

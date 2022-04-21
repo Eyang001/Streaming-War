@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Streaming Service Display</title>
+</head>
+<body>
+<h1 id=shortName></h1>
+    <script>
+        fetch("http://localhost:8080/crud/streamingservice")
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (resp) {
+                document.querySelector("shortName").innerHTML = resp.value;
+            })
+            .catch(function (error) {
+                console.log("Error: " + error);
+            });
+    </script>
+</body>
+</html>
